@@ -5,6 +5,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApp", "supporting-projec
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Files", "Solution Files", "{A638F507-47C8-406E-95A9-660BD96A9D92}"
 	ProjectSection(SolutionItems) = preProject
+		supporting-files\required_reg.reg = supporting-files\required_reg.reg
 		supporting-files\TestFile.xml = supporting-files\TestFile.xml
 	EndProjectSection
 EndProject
@@ -23,6 +24,13 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Samples", "Samples", "{A0AF4B0C-23E1-48A6-8A67-C46FFF00CCD2}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Supporting Projects", "Supporting Projects", "{B114900B-BEBA-4765-8CE3-83A4F031850C}"
+EndProject
+Project("{930C7802-8A8C-48F9-8165-68863BCCD9DD}") = "RegistryXmlFileTransform", "samples\RegistryXmlFileTransform\RegistryXmlFileTransform.wixproj", "{99148A13-B507-4113-A1A5-E0A8CCAD192C}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "RegistryXmlFileTransform", "RegistryXmlFileTransform", "{2F1D9FA8-B4E4-4A86-B6C7-FBBE328406D2}"
+	ProjectSection(SolutionItems) = preProject
+		samples\RegistryXmlFileTransform\README.txt = samples\RegistryXmlFileTransform\README.txt
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -74,15 +82,27 @@ Global
 		{F394CBA4-8BF9-4693-B39C-8DBD0B15EFBC}.Release|Mixed Platforms.Build.0 = Release|x86
 		{F394CBA4-8BF9-4693-B39C-8DBD0B15EFBC}.Release|x86.ActiveCfg = Release|x86
 		{F394CBA4-8BF9-4693-B39C-8DBD0B15EFBC}.Release|x86.Build.0 = Release|x86
+		{99148A13-B507-4113-A1A5-E0A8CCAD192C}.Debug|Any CPU.ActiveCfg = Debug|x86
+		{99148A13-B507-4113-A1A5-E0A8CCAD192C}.Debug|Mixed Platforms.ActiveCfg = Debug|x86
+		{99148A13-B507-4113-A1A5-E0A8CCAD192C}.Debug|Mixed Platforms.Build.0 = Debug|x86
+		{99148A13-B507-4113-A1A5-E0A8CCAD192C}.Debug|x86.ActiveCfg = Debug|x86
+		{99148A13-B507-4113-A1A5-E0A8CCAD192C}.Debug|x86.Build.0 = Debug|x86
+		{99148A13-B507-4113-A1A5-E0A8CCAD192C}.Release|Any CPU.ActiveCfg = Release|x86
+		{99148A13-B507-4113-A1A5-E0A8CCAD192C}.Release|Mixed Platforms.ActiveCfg = Release|x86
+		{99148A13-B507-4113-A1A5-E0A8CCAD192C}.Release|Mixed Platforms.Build.0 = Release|x86
+		{99148A13-B507-4113-A1A5-E0A8CCAD192C}.Release|x86.ActiveCfg = Release|x86
+		{99148A13-B507-4113-A1A5-E0A8CCAD192C}.Release|x86.Build.0 = Release|x86
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
-		{13E70616-9227-4031-8516-6EFF291E5FDD} = {A638F507-47C8-406E-95A9-660BD96A9D92}
-		{EB806C0E-8064-48EF-BC84-4F9A140EAEEC} = {A0AF4B0C-23E1-48A6-8A67-C46FFF00CCD2}
-		{5C012EF8-9D43-4370-959F-178EE502D9F7} = {A0AF4B0C-23E1-48A6-8A67-C46FFF00CCD2}
-		{F394CBA4-8BF9-4693-B39C-8DBD0B15EFBC} = {A0AF4B0C-23E1-48A6-8A67-C46FFF00CCD2}
 		{C2704E9E-9B4F-4885-AB69-855C30B8D6F9} = {B114900B-BEBA-4765-8CE3-83A4F031850C}
+		{13E70616-9227-4031-8516-6EFF291E5FDD} = {A638F507-47C8-406E-95A9-660BD96A9D92}
+		{2F1D9FA8-B4E4-4A86-B6C7-FBBE328406D2} = {A638F507-47C8-406E-95A9-660BD96A9D92}
+		{EB806C0E-8064-48EF-BC84-4F9A140EAEEC} = {A0AF4B0C-23E1-48A6-8A67-C46FFF00CCD2}
+		{F394CBA4-8BF9-4693-B39C-8DBD0B15EFBC} = {A0AF4B0C-23E1-48A6-8A67-C46FFF00CCD2}
+		{5C012EF8-9D43-4370-959F-178EE502D9F7} = {A0AF4B0C-23E1-48A6-8A67-C46FFF00CCD2}
+		{99148A13-B507-4113-A1A5-E0A8CCAD192C} = {A0AF4B0C-23E1-48A6-8A67-C46FFF00CCD2}
 	EndGlobalSection
 EndGlobal

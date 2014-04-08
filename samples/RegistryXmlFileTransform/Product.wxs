@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi" xmlns:util="http://schemas.microsoft.com/wix/UtilExtension">
+	<Product Id="*" Name="RegistryXmlFileTransform" Language="1033" Version="1.0.0.0" Manufacturer="BloggedByChris" UpgradeCode="8e3a571f-20e8-4670-b1bd-38024ae703f7">
+		<Package InstallerVersion="200" Compressed="yes" InstallScope="perMachine" />
+
+		<MajorUpgrade DowngradeErrorMessage="A newer version of [ProductName] is already installed." />
+		<MediaTemplate />
+
+    <Property Id="OVERRIDEREGVALUE1">
+      <RegistrySearch Id="RegOverrideValue1"
+                      Root="HKCU"
+                      Key="Software\BloggedByChris\WixSample\RegistryXmlFileTransform"
+                      Name="Override1"
+                      Type="raw" />
+    </Property>
+
+    <Property Id="OVERRIDEREGVALUE2">
+      <RegistrySearch Id="RegOverrideValue2"
+                      Root="HKCU"
+                      Key="Software\BloggedByChris\WixSample\RegistryXmlFileTransform"
+                      Name="Override2"
+                      Type="raw" />
+    </Property>
+
+		<Feature Id="ProductFeature" Title="RegistryXmlFileTransform" Level="1">
+			<ComponentGroupRef Id="ProductComponents" />
+		</Feature>
+	</Product>
+
+	<Fragment>
+		<Directory Id="TARGETDIR" Name="SourceDir">
+			<Directory Id="ProgramFilesFolder">
+				<Directory Id="INSTALLFOLDER" Name="RegistryXmlFileTransform" />
+			</Directory>
+		</Directory>
+	</Fragment>
+
+	<Fragment>
+		<ComponentGroup Id="ProductComponents" Directory="INSTALLFOLDER">
+      <Component Id="CMP_CopyXml">
+        <File Id="FILE_TestXml" src="..\..\supporting-files\TestFile.xml" />
+        <util:XmlFile 
+             Id="XFORM_XmlValue1"
+             Action="setValue"
+             File="[#FILE_TestXml]"
+             ElementPath="//Root/Settings/add[\[]@key='TestValue1'[\]]/@value"
+             Value="[OVERRIDEREGVALUE1]" />
+        <util:XmlFile
+             Id="XFORM_XmlValue2"
+             Action="setValue"
+             File="[#FILE_TestXml]"
+             ElementPath="//Root/Settings/add[\[]@key='TestValue2'[\]]/@value"
+             Value="[OVERRIDEREGVALUE2]" />
+      </Component>
+		</ComponentGroup>
+	</Fragment>
+</Wix>
