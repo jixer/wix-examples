@@ -5,7 +5,7 @@
 
     <Media Id="1" Cabinet="files.cab" />
     
-		<Feature Id="ProductFeature" Title="BasicFileCopy" Level="1">
+		<Feature Id="ProductFeature" Title="PublishedWebFilesCopy" Level="1">
       <ComponentGroupRef Id="CMP_InstallFiles" />
 		</Feature>
 	</Product>

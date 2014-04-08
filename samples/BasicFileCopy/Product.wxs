@@ -6,7 +6,7 @@
 		<MajorUpgrade DowngradeErrorMessage="A newer version of [ProductName] is already installed." />
 		<MediaTemplate />
 
-		<Feature Id="ProductFeature" Title="XmlTransformProj" Level="1">
+		<Feature Id="ProductFeature" Title="BasicFileCopy" Level="1">
 			<ComponentGroupRef Id="ProductComponents" />
 		</Feature>
 	</Product>
@@ -14,7 +14,7 @@
 	<Fragment>
 		<Directory Id="TARGETDIR" Name="SourceDir">
 			<Directory Id="ProgramFilesFolder">
-				<Directory Id="INSTALLFOLDER" Name="XmlTransformProj" />
+				<Directory Id="INSTALLFOLDER" Name="BasicFileCopy" />
 			</Directory>
 		</Directory>
 	</Fragment>
