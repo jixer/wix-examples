@@ -9,7 +9,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Files", "Solution 
 		samples\BasicFileCopy\README.txt = samples\BasicFileCopy\README.txt
 	EndProjectSection
 EndProject
-Project("{930C7802-8A8C-48F9-8165-68863BCCD9DD}") = "BasicFileCopy", "samples\BasicFileCopy\BasicFileCopy.wixproj", "{5C012EF8-9D43-4370-959F-178EE502D9F7}"
+Project("{930C7802-8A8C-48F9-8165-68863BCCD9DD}") = "PublishedWebFilesCopy", "samples\PublishedWebFilesCopy\PublishedWebFilesCopy.wixproj", "{5C012EF8-9D43-4370-959F-178EE502D9F7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
-	<Product Id="*" Name="BasicFileCopy" Language="1033" Version="1.0.0.0" Manufacturer="BloggedByChris" UpgradeCode="d79f3bc1-a820-4b6f-a295-6eea909f98b1">
+	<Product Id="*" Name="PublishedWebFilesCopy" Language="1033" Version="1.0.0.0" Manufacturer="BloggedByChris" UpgradeCode="d79f3bc1-a820-4b6f-a295-6eea909f98b1">
 		<Package InstallerVersion="200" Compressed="yes" InstallScope="perMachine" />
 
     <Media Id="1" Cabinet="files.cab" />
@@ -13,7 +13,7 @@
 	<Fragment>
 		<Directory Id="TARGETDIR" Name="SourceDir">
 			<Directory Id="ProgramFilesFolder">
-        <Directory Id="INSTALLFOLDER" Name="BasicFileCopy" />
+        <Directory Id="INSTALLFOLDER" Name="PublishedWebFilesCopy" />
 			</Directory>
 		</Directory>
 	</Fragment>
