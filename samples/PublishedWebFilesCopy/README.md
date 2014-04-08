@@ -1,3 +1,3 @@
-Basic File Copy Example
+Published Web Files Copy Example
 =======================
 
