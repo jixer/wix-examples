@@ -4,7 +4,7 @@
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
     <ProductVersion>3.8</ProductVersion>
-    <ProjectGuid>eb806c0e-8064-48ef-bc84-4f9a140eaeec</ProjectGuid>
+    <ProjectGuid>{f394cba4-8bf9-4693-b39c-8dbd0b15efbc}</ProjectGuid>
     <SchemaVersion>2.0</SchemaVersion>
     <OutputName>XmlTransformProj</OutputName>
     <OutputType>Package</OutputType>
@@ -22,6 +22,12 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="Product.wxs" />
+  </ItemGroup>
+  <ItemGroup>
+    <WixExtension Include="WixUtilExtension">
+      <HintPath>$(WixExtDir)\WixUtilExtension.dll</HintPath>
+      <Name>WixUtilExtension</Name>
+    </WixExtension>
   </ItemGroup>
   <Import Project="$(WixTargetsPath)" />
   <!--

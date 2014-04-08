@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi" xmlns:util="http://schemas.microsoft.com/wix/UtilExtension">
 	<Product Id="*" Name="BasicFileCopy" Language="1033" Version="1.0.0.0" Manufacturer="BloggedByChris" UpgradeCode="8e3a571f-20e8-4670-b1bd-38024ae703f7">
 		<Package InstallerVersion="200" Compressed="yes" InstallScope="perMachine" />
 
@@ -23,6 +23,18 @@
 		<ComponentGroup Id="ProductComponents" Directory="INSTALLFOLDER">
       <Component Id="CMP_CopyXml">
         <File Id="FILE_TestXml" src="..\..\supporting-files\TestFile.xml" />
+        <util:XmlFile 
+             Id="XFORM_XmlValue1"
+             Action="setValue"
+             File="[#FILE_TestXml]"
+             ElementPath="//Root/Settings/add[\[]@key='TestValue1'[\]]/@value"
+             Value="OverrideValue1" />
+        <util:XmlFile
+             Id="XFORM_XmlValue2"
+             Action="setValue"
+             File="[#FILE_TestXml]"
+             ElementPath="//Root/Settings/add[\[]@key='TestValue2'[\]]/@value"
+             Value="OverrideValue2" />
       </Component>
 		</ComponentGroup>
 	</Fragment>
