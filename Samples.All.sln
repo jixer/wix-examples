@@ -5,6 +5,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApp", "supporting-projec
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Files", "Solution Files", "{A638F507-47C8-406E-95A9-660BD96A9D92}"
 	ProjectSection(SolutionItems) = preProject
+		supporting-files\FlatFile.txt = supporting-files\FlatFile.txt
 		supporting-files\required_reg.reg = supporting-files\required_reg.reg
 		supporting-files\TestFile.xml = supporting-files\TestFile.xml
 	EndProjectSection
@@ -37,6 +38,8 @@ EndProject
 Project("{930C7802-8A8C-48F9-8165-68863BCCD9DD}") = "SimpleCustomActionInstaller", "samples\SimpleCustomActionInstaller\SimpleCustomActionInstaller.wixproj", "{E8F43657-C11C-411A-8818-56F990D88AFF}"
 EndProject
 Project("{930C7802-8A8C-48F9-8165-68863BCCD9DD}") = "MinimalUI", "samples\MinimalUI\MinimalUI.wixproj", "{9A67C34F-19E5-4A2D-BA02-952A4036436E}"
+EndProject
+Project("{930C7802-8A8C-48F9-8165-68863BCCD9DD}") = "OptionalFeaturesUI", "samples\OptionalFeaturesUI\OptionalFeaturesUI.wixproj", "{5144A894-E494-4855-9279-58178354E973}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -128,6 +131,16 @@ Global
 		{9A67C34F-19E5-4A2D-BA02-952A4036436E}.Release|Mixed Platforms.Build.0 = Release|x86
 		{9A67C34F-19E5-4A2D-BA02-952A4036436E}.Release|x86.ActiveCfg = Release|x86
 		{9A67C34F-19E5-4A2D-BA02-952A4036436E}.Release|x86.Build.0 = Release|x86
+		{5144A894-E494-4855-9279-58178354E973}.Debug|Any CPU.ActiveCfg = Debug|x86
+		{5144A894-E494-4855-9279-58178354E973}.Debug|Mixed Platforms.ActiveCfg = Debug|x86
+		{5144A894-E494-4855-9279-58178354E973}.Debug|Mixed Platforms.Build.0 = Debug|x86
+		{5144A894-E494-4855-9279-58178354E973}.Debug|x86.ActiveCfg = Debug|x86
+		{5144A894-E494-4855-9279-58178354E973}.Debug|x86.Build.0 = Debug|x86
+		{5144A894-E494-4855-9279-58178354E973}.Release|Any CPU.ActiveCfg = Release|x86
+		{5144A894-E494-4855-9279-58178354E973}.Release|Mixed Platforms.ActiveCfg = Release|x86
+		{5144A894-E494-4855-9279-58178354E973}.Release|Mixed Platforms.Build.0 = Release|x86
+		{5144A894-E494-4855-9279-58178354E973}.Release|x86.ActiveCfg = Release|x86
+		{5144A894-E494-4855-9279-58178354E973}.Release|x86.Build.0 = Release|x86
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -143,5 +156,6 @@ Global
 		{D4E9AC66-C214-4F66-A379-C46CA457691B} = {A0AF4B0C-23E1-48A6-8A67-C46FFF00CCD2}
 		{E8F43657-C11C-411A-8818-56F990D88AFF} = {A0AF4B0C-23E1-48A6-8A67-C46FFF00CCD2}
 		{9A67C34F-19E5-4A2D-BA02-952A4036436E} = {A0AF4B0C-23E1-48A6-8A67-C46FFF00CCD2}
+		{5144A894-E494-4855-9279-58178354E973} = {A0AF4B0C-23E1-48A6-8A67-C46FFF00CCD2}
 	EndGlobalSection
 EndGlobal
