@@ -1,3 +1,3 @@
-Minimal UI Example
+Optional Features UI Example
 =======================
 
