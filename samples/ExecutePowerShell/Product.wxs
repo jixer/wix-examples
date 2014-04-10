@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+	<Product Id="*" Name="ExecutePowerShell" Language="1033" Version="1.0.0.0" Manufacturer="BloggedByChris" UpgradeCode="8e3a571f-20e8-4670-b1bd-38024ae703f7">
+		<Package InstallerVersion="200" Compressed="yes" InstallScope="perMachine" />
+
+		<MediaTemplate />
+
+		<Feature Id="ProductFeature" Title="ExecutePowerShell" Level="1">
+			<ComponentGroupRef Id="ProductComponents" />
+		</Feature>
+
+    <Property Id="QtExecCmdLine" Value="&quot;powershell.exe&quot; -NoLogo -NonInteractive -InputFormat None -ExecutionPolicy Bypass -NoProfile -File &quot;[#FILE_InstallScript]&quot; -XMLFilePath &quot;[#FILE_TestXml]&quot;" />
+    <CustomAction Id="QtExecCmdLine" BinaryKey="WixCA" DllEntry="CAQuietExec" Execute="immediate" Return="check" />
+
+    <InstallExecuteSequence>
+      <Custom Action="QtExecCmdLine" Before="InstallFiles">NOT Installed</Custom>
+    </InstallExecuteSequence>
+	</Product>
+
+	<Fragment>
+		<Directory Id="TARGETDIR" Name="SourceDir">
+			<Directory Id="ProgramFilesFolder">
+        <Directory Id="INSTALLFOLDER" Name="ExecutePowerShell">
+          <Directory Id="INSTALLSCRIPTSFOLDER" Name="Install Scripts" />
+        </Directory>
+			</Directory>
+		</Directory>
+	</Fragment>
+
+	<Fragment>
+		<ComponentGroup Id="ProductComponents">
+      <Component Id="CMP_CopyXml" Directory="INSTALLFOLDER">
+        <File Id="FILE_TestXml" Source="..\..\supporting-files\TestFile.xml" />        
+      </Component>
+      <Component Id="CMP_CopyInstallScript" Directory="INSTALLSCRIPTSFOLDER">
+        <File Id="FILE_InstallScript" Source="..\..\supporting-files\InstallScript.ps1" />
+      </Component>
+		</ComponentGroup>
+	</Fragment>
+</Wix>
