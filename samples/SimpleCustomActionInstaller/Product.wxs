@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi" xmlns:util="http://schemas.microsoft.com/wix/UtilExtension">
+  <Product Id="*" Name="SimpleCustomActionInstaller" Language="1033" Version="1.0.0.0" Manufacturer="BloggedByChris" UpgradeCode="4aaebaac-532c-4c06-a73a-ab5ebf8c0a82">
+    <Package InstallerVersion="200" Compressed="yes" InstallScope="perMachine" />
+
+    <MajorUpgrade DowngradeErrorMessage="A newer version of [ProductName] is already installed." />
+    <MediaTemplate />
+
+    <Binary Id="SimpleCustomActionsDLL" SourceFile="$(var.SimpleCustomAction.TargetDir)BbC.WixSamples.SimpleCustomAction.CA.dll" />
+    <Property Id="PROPERTY1" Value="DefaultValue1" />
+
+    <Feature Id="ProductFeature" Title="SimpleCustomActionInstaller" Level="1">
+      <ComponentGroupRef Id="ProductComponents" />
+    </Feature>
+
+    <CustomAction
+        Id="SetPropertyCA"
+        DllEntry="SetPropertyCustomAction"
+        BinaryKey="SimpleCustomActionsDLL"
+        Execute="immediate"
+        Return="check" />
+
+    <InstallExecuteSequence>
+      <Custom
+          Action="SetPropertyCA"
+          After="InstallInitialize" />
+    </InstallExecuteSequence>
+  </Product>
+
+  <Fragment>
+    <Directory Id="TARGETDIR" Name="SourceDir">
+      <Directory Id="ProgramFilesFolder">
+        <Directory Id="INSTALLFOLDER" Name="SimpleCustomActionInstaller" />
+      </Directory>
+    </Directory>
+  </Fragment>
+
+  <Fragment>
+    <ComponentGroup Id="ProductComponents" Directory="INSTALLFOLDER">
+      <Component Id="ProductComponent">
+        <File Id="FILE_TestXml" Source="..\..\supporting-files\TestFile.xml" />
+        <util:XmlFile
+               Id="XFORM_XmlValue1"
+               Action="setValue"
+               File="[#FILE_TestXml]"
+               ElementPath="//Root/Settings/add[\[]@key='TestValue1'[\]]/@value"
+               Value="[PROPERTY1]" />
+      </Component>
+    </ComponentGroup>
+  </Fragment>
+</Wix>
