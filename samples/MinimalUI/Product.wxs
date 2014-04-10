@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+	<Product Id="*" Name="MinimalUI" Language="1033" Version="1.0.0.0" Manufacturer="BloggedByChris" UpgradeCode="8e3a571f-20e8-4670-b1bd-38024ae703f7">
+		<Package InstallerVersion="200" Compressed="yes" InstallScope="perMachine" />
+
+		<MediaTemplate />
+    
+    <UIRef Id="WixUI_Minimal" />
+
+		<Feature Id="ProductFeature" Title="MinimalUI" Level="1">
+			<ComponentGroupRef Id="ProductComponents" />
+		</Feature>
+	</Product>
+
+	<Fragment>
+		<Directory Id="TARGETDIR" Name="SourceDir">
+			<Directory Id="ProgramFilesFolder">
+				<Directory Id="INSTALLFOLDER" Name="MinimalUI" />
+			</Directory>
+		</Directory>
+	</Fragment>
+
+	<Fragment>
+		<ComponentGroup Id="ProductComponents" Directory="INSTALLFOLDER">
+      <Component Id="CMP_CopyXml">
+        <File Id="FILE_TestXml" Source="..\..\supporting-files\TestFile.xml" />
+      </Component>
+		</ComponentGroup>
+	</Fragment>
+</Wix>
