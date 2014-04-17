@@ -22,7 +22,7 @@
 	<Fragment>
 		<ComponentGroup Id="ProductComponents" Directory="INSTALLFOLDER">
       <Component Id="CMP_CopyXml">
-        <File Id="FILE_TestXml" src="..\..\supporting-files\TestFile.xml" />
+        <File Id="FILE_TestXml" Source="..\..\supporting-files\TestFile.xml" />
         <util:XmlFile 
              Id="XFORM_XmlValue1"
              Action="setValue"
