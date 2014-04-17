@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+	<Product Id="*" Name="StartingAndStoppingWinSvcs" Language="1033" Version="1.0.0.0" Manufacturer="BloggedByChris" UpgradeCode="53cc6a44-8d46-4527-962f-b46cb5724ba8">
+		<Package InstallerVersion="200" Compressed="yes" InstallScope="perMachine" />
+
+		<MediaTemplate />
+
+		<Feature Id="ProductFeature" Title="StartingAndStoppingWinSvcs" Level="1">
+			<ComponentGroupRef Id="ProductComponents" />
+		</Feature>
+
+    <!--http://wixtoolset.org/documentation/manual/v3/customactions/qtexec.html-->
+    <Property Id="QtExecCmdLineServiceStop" Value="&quot;net&quot; stop Spooler" />
+    <CustomAction Id="QtExecCmdLineServiceStop" BinaryKey="WixCA" DllEntry="CAQuietExec" Execute="deferred" Return="check" />
+
+    <!--http://wixtoolset.org/documentation/manual/v3/customactions/qtexec.html-->
+    <Property Id="QtExecCmdLineServiceStart" Value="&quot;net&quot; start Spooler" />
+    <CustomAction Id="QtExecCmdLineServiceStart" BinaryKey="WixCA" DllEntry="CAQuietExec" Execute="deferred" Return="check" />
+
+    <InstallExecuteSequence>
+      <!--http://wixtoolset.org/documentation/manual/v3/xsd/wix/installinitialize.html-->
+      <Custom Action="QtExecCmdLineServiceStop" After="InstallInitialize" />
+      
+      <!--http://wixtoolset.org/documentation/manual/v3/xsd/wix/installfinalize.html-->
+      <Custom Action="QtExecCmdLineServiceStart" Before="InstallFinalize" />
+    </InstallExecuteSequence>
+	</Product>
+
+	<Fragment>
+		<Directory Id="TARGETDIR" Name="SourceDir">
+			<Directory Id="ProgramFilesFolder">
+				<Directory Id="INSTALLFOLDER" Name="StartingAndStoppingWinSvcs" />
+			</Directory>
+		</Directory>
+	</Fragment>
+
+	<Fragment>
+		<ComponentGroup Id="ProductComponents" Directory="INSTALLFOLDER">
+      <Component Id="CMP_Null" Guid="1e395d93-9c0d-4f18-ac25-a059e2fc713e">
+        <CreateFolder />
+      </Component>
+		</ComponentGroup>
+	</Fragment>
+</Wix>
