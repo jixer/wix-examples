@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+  <Fragment>
+    
+    <UI Id="CustomWizard">
+      <TextStyle Id="WixUI_Font_Normal" FaceName="Tahoma" Size="8" />
+      <TextStyle Id="WixUI_Font_Bigger" FaceName="Tahoma" Size="12" />
+      <TextStyle Id="WixUI_Font_Title" FaceName="Tahoma" Size="9" Bold="yes" />
+
+      <Property Id="DefaultUIFont" Value="WixUI_Font_Normal" />
+
+      <Dialog Id="Main" Width="200" Height="150">
+        <Control Type="PushButton" Id="mainNext" Width="56" Height="17" X="128" Y="120">
+          <Text>Next</Text>
+          <Publish Event="NewDialog" Value="Main2">1</Publish>
+        </Control>
+        <Control Type="Text" Id="welcomeText" Width="150" Height="17" X="15" Y="19">
+          <Text>Welcome to the installer</Text>
+        </Control>
+      </Dialog>
+      <Dialog Id="Main2" Width="200" Height="150">
+        <Control Type="CheckBox" Id="file1Checkbox" Width="154" Height="17" X="26" Y="22" Property="INSTALLFILE1" CheckBoxValue="1">
+          <Text>Publish file 1</Text>
+        </Control>
+        <Control Type="CheckBox" Id="file2Checkbox" Width="154" Height="17" X="30" Y="49" Property="INSTALLFILE2" CheckBoxValue="1">
+          <Text>Publish file 2</Text>
+        </Control>
+        <Control Type="PushButton" Id="btnInstall" Width="56" Height="17" X="131" Y="124">
+          <Text>Install</Text>
+          <Publish Event="EndDialog" Value="Return">1</Publish>
+        </Control>
+      </Dialog>
+      <InstallUISequence>
+        <Show Dialog="Main" Before="ExecuteAction" />
+      </InstallUISequence>
+    </UI>
+  </Fragment>
+</Wix>

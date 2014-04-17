@@ -6,6 +6,7 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Files", "Solution Files", "{A638F507-47C8-406E-95A9-660BD96A9D92}"
 	ProjectSection(SolutionItems) = preProject
 		supporting-files\FlatFile.txt = supporting-files\FlatFile.txt
+		supporting-files\FlatFile2.txt = supporting-files\FlatFile2.txt
 		supporting-files\InstallScript.ps1 = supporting-files\InstallScript.ps1
 		supporting-files\required_reg.reg = supporting-files\required_reg.reg
 		supporting-files\TestFile.xml = supporting-files\TestFile.xml
@@ -45,6 +46,8 @@ EndProject
 Project("{930C7802-8A8C-48F9-8165-68863BCCD9DD}") = "ExecutePowerShell", "samples\ExecutePowerShell\ExecutePowerShell.wixproj", "{4A338ECF-4BFF-4B5F-94A4-258B0B74814C}"
 EndProject
 Project("{930C7802-8A8C-48F9-8165-68863BCCD9DD}") = "StartingAndStoppingWinSvcs", "samples\StartingAndStoppingWinSvcs\StartingAndStoppingWinSvcs.wixproj", "{95160DEA-7A70-4EC9-81C0-C8DF362BABB6}"
+EndProject
+Project("{930C7802-8A8C-48F9-8165-68863BCCD9DD}") = "CustomUI", "samples\CustomUI\CustomUI.wixproj", "{49C84A59-CF6D-4A07-A0AC-274683D0B75A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -166,6 +169,16 @@ Global
 		{95160DEA-7A70-4EC9-81C0-C8DF362BABB6}.Release|Mixed Platforms.Build.0 = Release|x86
 		{95160DEA-7A70-4EC9-81C0-C8DF362BABB6}.Release|x86.ActiveCfg = Release|x86
 		{95160DEA-7A70-4EC9-81C0-C8DF362BABB6}.Release|x86.Build.0 = Release|x86
+		{49C84A59-CF6D-4A07-A0AC-274683D0B75A}.Debug|Any CPU.ActiveCfg = Debug|x86
+		{49C84A59-CF6D-4A07-A0AC-274683D0B75A}.Debug|Mixed Platforms.ActiveCfg = Debug|x86
+		{49C84A59-CF6D-4A07-A0AC-274683D0B75A}.Debug|Mixed Platforms.Build.0 = Debug|x86
+		{49C84A59-CF6D-4A07-A0AC-274683D0B75A}.Debug|x86.ActiveCfg = Debug|x86
+		{49C84A59-CF6D-4A07-A0AC-274683D0B75A}.Debug|x86.Build.0 = Debug|x86
+		{49C84A59-CF6D-4A07-A0AC-274683D0B75A}.Release|Any CPU.ActiveCfg = Release|x86
+		{49C84A59-CF6D-4A07-A0AC-274683D0B75A}.Release|Mixed Platforms.ActiveCfg = Release|x86
+		{49C84A59-CF6D-4A07-A0AC-274683D0B75A}.Release|Mixed Platforms.Build.0 = Release|x86
+		{49C84A59-CF6D-4A07-A0AC-274683D0B75A}.Release|x86.ActiveCfg = Release|x86
+		{49C84A59-CF6D-4A07-A0AC-274683D0B75A}.Release|x86.Build.0 = Release|x86
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -184,5 +197,6 @@ Global
 		{5144A894-E494-4855-9279-58178354E973} = {A0AF4B0C-23E1-48A6-8A67-C46FFF00CCD2}
 		{4A338ECF-4BFF-4B5F-94A4-258B0B74814C} = {A0AF4B0C-23E1-48A6-8A67-C46FFF00CCD2}
 		{95160DEA-7A70-4EC9-81C0-C8DF362BABB6} = {A0AF4B0C-23E1-48A6-8A67-C46FFF00CCD2}
+		{49C84A59-CF6D-4A07-A0AC-274683D0B75A} = {A0AF4B0C-23E1-48A6-8A67-C46FFF00CCD2}
 	EndGlobalSection
 EndGlobal

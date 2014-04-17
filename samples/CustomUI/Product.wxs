@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+	<Product Id="*" Name="CustomUI" Language="1033" Version="1.0.0.0" Manufacturer="BloggedByChris" UpgradeCode="cc0a7100-d3d0-4719-a134-1c41493bbd6d">
+		<Package InstallerVersion="200" Compressed="yes" InstallScope="perMachine" />
+
+		<MediaTemplate EmbedCab="yes" />
+
+    <Property Id="INSTALLFILE1" />
+    <Property Id="INSTALLFILE2" />
+
+		<Feature Id="ProductFeature" Title="CustomUI" Level="1">
+			<ComponentGroupRef Id="ProductComponents" />
+		</Feature>
+    <UIRef Id="CustomWizard" />
+	</Product>
+
+	<Fragment>
+		<Directory Id="TARGETDIR" Name="SourceDir">
+			<Directory Id="ProgramFilesFolder">
+				<Directory Id="INSTALLFOLDER" Name="CustomUI" />
+			</Directory>
+		</Directory>
+	</Fragment>
+
+	<Fragment>
+		<ComponentGroup Id="ProductComponents" Directory="INSTALLFOLDER">
+      <Component Id="CMP_FOLDER" Guid="28bd1ad2-9399-4291-a5c5-9b51f84a9f14">
+        <CreateFolder />
+      </Component>
+      
+			 <Component Id="CMP_FILE1" Guid="9f1dd70d-3c43-43a7-995f-1314e6f6464b">
+         <Condition>INSTALLFILE1</Condition>
+
+         <File Id="FILE_FF1" Source="..\..\supporting-files\FlatFile.txt" />
+			 </Component>
+      <Component Id="CMP_FILE2" Guid="f024f46b-ca55-4ffb-ab93-901030181c7b">
+        <Condition>INSTALLFILE2</Condition>
+
+        <File Id="FILE_FF2" Source="..\..\supporting-files\FlatFile2.txt" />
+      </Component>
+    </ComponentGroup>
+	</Fragment>
+</Wix>
